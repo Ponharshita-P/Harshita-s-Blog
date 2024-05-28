@@ -28,8 +28,7 @@ def about():
 @app.route("/contact", methods=["GET", "POST"])
 def contact():
   if request.method == "POST":
-    data = request.form
-    success = True  
+    data = request.form 
     send_email(data["name"], data["email"])
     return render_template("contact.html",success=True)
   return render_template("contact.html",success=False)
