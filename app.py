@@ -1,12 +1,10 @@
 from flask import Flask, render_template, request
 import requests
 import smtplib
-import os
-from dotenv import load_dotenv
-  
-load_dotenv()  # Load environment variables from .env file
 
 posts = requests.get("https://api.npoint.io/dd3927781f4255e907e6").json()
+OWN_EMAIL = "harshitasblog@gmail.com"
+OWN_PASSWORD = "vfxj fsay khmb qcvp"
 
 app = Flask('app')
 
