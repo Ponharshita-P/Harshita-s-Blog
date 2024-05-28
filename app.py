@@ -3,7 +3,12 @@ import requests
 import smtplib
 import os
 from dotenv import load_dotenv
+import inspect
 
+# Monkey patch inspect if necessary
+if not hasattr(inspect, 'getargspec'):
+    inspect.getargspec = inspect.getfullargspec
+  
 load_dotenv()  # Load environment variables from .env file
 
 posts = requests.get("https://api.npoint.io/dd3927781f4255e907e6").json()
