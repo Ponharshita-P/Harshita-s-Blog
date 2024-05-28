@@ -57,4 +57,4 @@ Harshita's Blog ❤️'''
         connection.sendmail(OWN_EMAIL, email, email_message.encode('utf-8'))
 
 
-app.run(debug=True)
+app.run(debug=True,host='0.0.0.0',port=5000)
